@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   get '/' do
   end
   
-  get '/articles/new' do 
+  get '/articles/new' do #read/index
     erb :new
   end
   
@@ -20,10 +20,15 @@ class ApplicationController < Sinatra::Base
     redirect to "/articles/#{ @article.id }"
   end
   
-  get "/articles/:id" do #read
+  get "/articles/:id" do #read/show
     @article = Article.find(params[:id])
     erb :show
   end
+  
+  get '/articles/:id/edit' do #update
+    
+    erb :edit
+  end 
   
   
 end

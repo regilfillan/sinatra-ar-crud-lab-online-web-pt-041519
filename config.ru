@@ -1,4 +1,3 @@
-use Rack::MethodOverride
 require './config/environment'
 
 begin
